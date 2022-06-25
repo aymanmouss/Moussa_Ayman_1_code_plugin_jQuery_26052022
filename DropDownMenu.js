@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-
-const DropDownMenu = ({ department, placeholder, inputeDepartments }) => {
+export function EasyDropDown({ data, placeholder, label, name }) {
   const [display, setDisplay] = useState(false);
-  const [inputeDepartment, setInputDepartment] = useState(placeholder);
-  inputeDepartments(inputeDepartment);
+  const [inputeData, setInputeData] = useState(placeholder);
   return (
     <>
-      <label htmlFor='department'>Department</label>
+      <label htmlFor='department'>{label}</label>
       <input
         type='button'
-        name='department'
-        value={inputeDepartment}
+        name={name}
+        value={inputeData}
         className='inputBtn '
         onClick={(e) => {
           setDisplay(!display);
@@ -18,11 +16,12 @@ const DropDownMenu = ({ department, placeholder, inputeDepartments }) => {
       />
       {display && (
         <ul className='optionList'>
-          {department.map((dep) => {
+          {data.map((dep, inidex) => {
             return (
               <li
+                key={inidex}
                 onClick={(e) => {
-                  setInputDepartment(e.target.innerText);
+                  setInputeData(e.target.innerText);
                   setDisplay(!display);
                 }}
               >
@@ -34,6 +33,4 @@ const DropDownMenu = ({ department, placeholder, inputeDepartments }) => {
       )}
     </>
   );
-};
-
-export default DropDownMenu;
+}
