@@ -14,10 +14,10 @@ With Easy Drop, you can easily create drop-down menus for react applications. It
 
 ## Installation
 
-Install my-project with npm
+Install create-easy-drop with npm
 
 ```bash
-  npm install easy-drop
+  npm i create-easy-drop
 ```
 
 ## Documentation
