@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-import { EasyDropDown } from "../components/EasyDropDown";
+import "./styles.css";
+import { EasyDrop } from "../components/EasyDrop";
 
 const stories = storiesOf("App Test", module);
 
@@ -13,10 +14,11 @@ stories.add("App", () => {
     "Legal",
   ];
   return (
-    <EasyDropDown
+    <EasyDrop
       data={department}
       placeholder={"--- Department ---"}
       label={"States"}
+      name={department}
     />
   );
 });
